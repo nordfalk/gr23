@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenu"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/tvy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="8dp"
+        android:text="Yarnet"
+        app:layout_constraintBottom_toTopOf="@+id/butik"
+        app:layout_constraintEnd_toEndOf="@+id/butik"
+        app:layout_constraintStart_toStartOf="@+id/butik"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/butik"
+        android:layout_width="166dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginBottom="36dp"
+        android:text="Butik"
+        app:layout_constraintBottom_toTopOf="@+id/forum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvy" />
+
+    <Button
+        android:id="@+id/forum"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="144dp"
+        android:text="Forum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/butik"
+        app:layout_constraintStart_toStartOf="@+id/butik"
+        app:layout_constraintTop_toBottomOf="@+id/butik" />
+
+</android.support.constraint.ConstraintLayout>
