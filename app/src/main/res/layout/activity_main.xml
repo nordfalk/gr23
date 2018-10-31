@@ -13,6 +13,9 @@
         android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="16dp"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/colorWhite"
+        app:itemTextColor="@color/colorWhite"
         app:menu="@menu/navigationbar_items"></android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>
