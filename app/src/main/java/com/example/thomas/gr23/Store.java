@@ -1,12 +1,10 @@
 package com.example.thomas.gr23;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -54,7 +52,7 @@ public class Store extends AppCompatActivity implements AdapterView.OnItemClickL
         lv.setAdapter(adapter);
         setContentView(R.layout.activity_store);
 
-        //iv.setImageResource(R.drawable.yarn.png);
+        iv.setImageResource(R.drawable.yarn);
     }
 
 
@@ -79,4 +77,3 @@ public class Store extends AppCompatActivity implements AdapterView.OnItemClickL
         }
     }
 
-}

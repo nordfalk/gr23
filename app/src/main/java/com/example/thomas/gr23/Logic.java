@@ -15,12 +15,9 @@ public class Logic {
     }
 
     int getBillede(int id) {
-        if (id == 0){
-            return R.drawable.yarn;
-        }
-        if(id == 1){}
 
-
+        if (id == 0)   id = R.drawable.yarn;
+        return id;
     }
 
 }
