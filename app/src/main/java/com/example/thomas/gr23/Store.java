@@ -1,60 +1,111 @@
 package com.example.thomas.gr23;
 
-import android.app.Fragment;
+
 import android.content.Intent;
-import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
+import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.FrameLayout;
 
-public class Store extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class Store extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView iv;
-    ListView lv;
-    String [] rec = new String[] {"sok", "hue"};
-    ArrayAdapter adapter;
-    LayoutInflater layoutInflater;
-    Fragment f;
-    Button b1, b2;
+    private BottomNavigationView mainNavigation;
+    private ViewPager viewPager;
 
+    //vores fragmenter det hører til bund-navigations-menuen
+    private HomeFragment homeFragment;
+    private SearchFragment searchFragment;
+    private PersonFragment personFragment;
+    MenuItem tideligereMenuItem;
 
-
-    //ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,list);
-
-
-    // ArrayAdapter laver fejl
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_store);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, R.id.lvopskrift, rec);
 
-      /*  adapter = new ArrayAdapter(this, R.layout.activity_store, R.id.lv, rec) {
+        setContentView(R.layout.activity_main);
+
+
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
+        mainNavigation =(BottomNavigationView) findViewById(R.id.store_navigation);
+
+
+        setupViewPager(viewPager);
+
+        mainNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public View getView(int position, View cachedView, ViewGroup parent) {
-                View view = super.getView(position, cachedView, parent);
-                TextView beskrivelse = view.findViewById(R.id.);
-                ImageView billede = view.findViewById(R.id.);
-                return view;
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int clicked = item.getItemId();
+
+                if (clicked == R.id.navigation_hjem) {
+                    viewPager.setCurrentItem(0);
+                    return true;
+                } else if (clicked == R.id.navigation_kategori) {
+                    viewPager.setCurrentItem(1);
+                    return true;
+                } else if (clicked == R.id.navigation_person) {
+                    viewPager.setCurrentItem(2);
+                    return true;
+                } else {
+                    return false;
+                }
             }
-        };*/
+
+        });
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            public void onPageSelected(int position) {
+                if (tideligereMenuItem != null) {
+                    tideligereMenuItem.setChecked(false);
+                } else {
+                    mainNavigation.getMenu().getItem(0).setChecked(false);
+                }
+                mainNavigation.getMenu().getItem(position).setChecked(true);
+                tideligereMenuItem = mainNavigation.getMenu().getItem(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(this);
 
-        lv = findViewById(R.id.lv);
-        lv.setOnItemClickListener(this);
-        lv.setAdapter(adapter);
-        setContentView(R.layout.activity_store);
+    }
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        homeFragment = new HomeFragment();
+        searchFragment = new SearchFragment();
+        personFragment = new PersonFragment();
+        adapter.addFragment(homeFragment);
+        adapter.addFragment(searchFragment );
+        adapter.addFragment(personFragment);
+        viewPager.setAdapter(adapter);
+    }
 
-        //iv.setImageResource(R.drawable.yarn.png);
+    @Override
+    public void onClick(View v) {
+        if(v == findViewById(R.id.fab)){
+            Intent i = new Intent(this, uploadopskrift.class);
+            startActivity(i);
+        }
+
     }
 
 
