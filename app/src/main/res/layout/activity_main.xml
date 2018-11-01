@@ -8,14 +8,25 @@
 
 
     <android.support.design.widget.BottomNavigationView
+        android:id="@+id/store_navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp"
         app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/colorWhite"
-        app:itemTextColor="@color/colorWhite"
-        app:menu="@menu/navigationbar_items"></android.support.design.widget.BottomNavigationView>
+        app:itemIconTint="@color/navigationbar_color"
+        app:itemTextColor="@color/navigationbar_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigationbar_items"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/store_navigation"
+        android:layout_marginBottom="56dp"
+        android:layout_alignParentTop="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
 
 </android.support.constraint.ConstraintLayout>
