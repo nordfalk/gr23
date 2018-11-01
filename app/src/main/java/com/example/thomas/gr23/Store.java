@@ -18,6 +18,7 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
     private BottomNavigationView mainNavigation;
     private ViewPager viewPager;
 
+
     //vores fragmenter det hører til bund-navigations-menuen
     private HomeFragment homeFragment;
     private SearchFragment searchFragment;
