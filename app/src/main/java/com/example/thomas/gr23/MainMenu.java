@@ -5,24 +5,25 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     Button butik, forum;
-    TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        tv = findViewById(R.id.tvy);
-        tv.setText("Velkommen til YARNET");
-
-        butik = (Button) findViewById(R.id.butik);
+        butik = findViewById(R.id.butik);
+        butik.setText("Butik");
         butik.setOnClickListener(this);
-        forum = (Button) findViewById(R.id.forum);
+        forum = findViewById(R.id.forum);
+        forum.setText("Forum");
         forum.setOnClickListener(this);
+
+
+
+
     }
 
 
