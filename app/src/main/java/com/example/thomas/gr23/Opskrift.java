@@ -24,12 +24,5 @@ public class Opskrift {
 
     }
 
-    int getBillede(int id){
-        return R.drawable.this.id;
 
-        switch (g.getAntalForkerteBogstaver()){
-            case 0:
-                iv.setImageResource(R.drawable.yarn.png);
-                break;
-    }
 }
