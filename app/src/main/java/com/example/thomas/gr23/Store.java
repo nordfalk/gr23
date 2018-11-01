@@ -33,9 +33,6 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         mainNavigation =(BottomNavigationView) findViewById(R.id.store_navigation);
 
-        homeFragment = new HomeFragment();
-        searchFragment = new SearchFragment();
-        personFragment = new PersonFragment();
 
         setupViewPager(viewPager);
 
