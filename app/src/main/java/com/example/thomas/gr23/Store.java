@@ -1,16 +1,19 @@
 package com.example.thomas.gr23;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
-public class Store extends AppCompatActivity {
+public class Store extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView mainNavigation;
     private ViewPager viewPager;
@@ -81,7 +84,8 @@ public class Store extends AppCompatActivity {
         });
 
 
-
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(this);
 
     }
     private void setupViewPager(ViewPager viewPager) {
@@ -95,4 +99,11 @@ public class Store extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
+    @Override
+    public void onClick(View v) {
+        if(v == findViewById(R.id.fab)){
+            Intent i = new Intent(this, uploadopskrift.class);
+            startActivity(i);
+        }
+    }
 }
