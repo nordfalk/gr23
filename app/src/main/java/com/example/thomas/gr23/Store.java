@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 
-public class Butik extends AppCompatActivity implements View.OnClickListener {
+public class Store extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView mainNavigation;
     private ViewPager viewPager;
