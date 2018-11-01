@@ -16,9 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Forum" />
-        <activity android:name=".Upload" />
-        <activity android:name=".Store"></activity>
+        <activity android:name=".Store" />
+        <activity android:name=".Forum"></activity>
     </application>
 
 </manifest>

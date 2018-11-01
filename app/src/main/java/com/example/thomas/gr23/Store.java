@@ -1,6 +1,5 @@
 package com.example.thomas.gr23;
 
-
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -25,11 +24,9 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
     private PersonFragment personFragment;
     MenuItem tideligereMenuItem;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
 
@@ -105,29 +102,5 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
             Intent i = new Intent(this, uploadopskrift.class);
             startActivity(i);
         }
-
     }
-
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        // if(i == ){} // i er positionen og fortæller opskriften i opskritft aktiviteten
-
-        if (view == b1) { // En knap på listen
-       //     intent i = new Intent(this, Opskrift.class);
-       //     i.putExtra(view.);
-
-        }
-
-        if (view == b2){
-//https://stackoverflow.com/questions/17599450/how-to-inflate-view-inside-fragment#17599543
-
-            LinearLayout linearLayout;
-         //   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-         //       View rootView = inflater.inflate(R.layout.fragment_store, container, false);
-            };
-
-        }
-    }
-
 }

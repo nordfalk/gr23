@@ -1,9 +1,7 @@
 <resources>
-
     <string name="app_name">Yarnet</string>
     <string name="navigation_home">Hjem</string>
     <string name="navigation_search">Kategorier</string>
     <string name="navigation_person">Bruger</string>
-
 
 </resources>
