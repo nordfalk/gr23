@@ -20,6 +20,7 @@ public class Butik extends AppCompatActivity implements View.OnClickListener {
 
 
 
+
     //vores fragmenter det hører til bund-navigations-menuen
     private HomeFragment homeFragment;
     private SearchFragment searchFragment;
