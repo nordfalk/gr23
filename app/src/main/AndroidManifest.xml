@@ -19,6 +19,7 @@
         <activity android:name=".Forum"></activity>
         <activity android:name=".Store"></activity>
         <activity android:name=".uploadopskrift"></activity>
+        <activity android:name=".Opskrift"></activity>
     </application>
 
 </manifest>

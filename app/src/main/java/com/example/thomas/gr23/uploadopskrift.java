@@ -24,6 +24,11 @@ public class uploadopskrift extends AppCompatActivity implements View.OnClickLis
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        Spinner spinnerkategori = findViewById(R.id.kategorispinner);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.kategorier, android.R.layout.simple_spinner_dropdown_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerkategori.setAdapter(adapter1);
+
 
         tilfoejopskrift = findViewById(R.id.opkriftknap);
         tilfoejopskrift.setOnClickListener(this);
@@ -37,6 +42,7 @@ public class uploadopskrift extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if(v == tilfoejopskrift){
             Intent i = new Intent(this, Opskrift.class);
+            startActivityForResult(i,1);
 
 
         } else if (v == tilfoejbilleder){
