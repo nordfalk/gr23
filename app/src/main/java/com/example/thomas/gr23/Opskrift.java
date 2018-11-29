@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.Spinner;
 public class Opskrift extends AppCompatActivity implements View.OnClickListener {
     Button tilfoejknap, sletknap;
     private LinearLayout parentlayout;
+    Menu menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,5 +54,12 @@ public class Opskrift extends AppCompatActivity implements View.OnClickListener 
 
     public void slettrin(View v) {
         parentlayout.removeViewAt(parentlayout.getChildCount() - 3);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu m) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.opskrift_actionbar_buttons, m);
+        return true;
     }
 }
