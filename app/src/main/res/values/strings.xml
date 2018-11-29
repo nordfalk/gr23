@@ -14,18 +14,14 @@
 
     <string-array name="kategorier">
         <item>Ingen kategori</item>
-        <item>a</item>
-        <item>b</item>
-        <item>c</item>
-        <item>d</item>
-        <item>e</item>
-        <item>f</item>
-        <item>g</item>
-        <item>h</item>
-        <item>i</item>
-        <item>j</item>
-        <item>k</item>
-        <item>l</item>
+        <item>Baby</item>
+        <item>Børn</item>
+        <item>Herre</item>
+        <item>Damer</item>
+        <item>Dyr og legetøj</item>
+        <item>Højtider</item>
+        <item>Interiør</item>
+        <item>Huer, vanter og strømper(voksne)</item>
     </string-array>
 
     <string-array name="gentagelser">
