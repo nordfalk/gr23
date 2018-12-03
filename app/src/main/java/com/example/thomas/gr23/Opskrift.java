@@ -52,6 +52,7 @@ public class Opskrift extends AppCompatActivity implements View.OnClickListener 
     public void tilfoejtrin(View v) {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View rowView = inflater.inflate(R.layout.trin, null);
+        rowView.findViewById(R.id.trinnummer) = ;
         // Add the new row before the add field button.
         parentlayout.addView(rowView, parentlayout.getChildCount() - 2);
     }
