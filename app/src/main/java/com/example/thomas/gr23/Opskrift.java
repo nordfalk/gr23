@@ -1,11 +1,14 @@
 package com.example.thomas.gr23;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,6 +19,7 @@ public class Opskrift extends AppCompatActivity implements View.OnClickListener 
     Button tilfoejknap, sletknap;
     private LinearLayout parentlayout;
     Menu menu;
+    String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,4 +66,25 @@ public class Opskrift extends AppCompatActivity implements View.OnClickListener 
         inflater.inflate(R.menu.opskrift_actionbar_buttons, m);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.faerdig:
+                Intent returIntent = new Intent();
+                returIntent.putExtra("resultat",data);
+                setResult(Activity.RESULT_OK,returIntent);
+                finish();
+                break;
+
+            case R.id.afbryd:
+                Intent afbrudtIntent = new Intent();
+                setResult(Activity.RESULT_CANCELED,afbrudtIntent);
+                finish();
+                break;
+        }
+
+        return true;
+    }
+
 }

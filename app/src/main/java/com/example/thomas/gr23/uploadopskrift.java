@@ -1,5 +1,6 @@
 package com.example.thomas.gr23;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class uploadopskrift extends AppCompatActivity implements View.OnClickListener {
     Button tilfoejopskrift;
@@ -57,7 +59,9 @@ public class uploadopskrift extends AppCompatActivity implements View.OnClickLis
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == 1){
-
+            if (resultCode == Activity.RESULT_OK){
+                Toast.makeText(this, "Du har tilføjet en opskrift", Toast.LENGTH_SHORT).show();
+            }
         }
 
         if (requestCode == 2){
