@@ -86,16 +86,16 @@
             <EditText
                 android:id="@+id/garnforbrugedit"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="39dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginStart="130dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="8dp"
                 android:ems="10"
                 android:hint="Garn"
                 android:inputType="textPersonName"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.128"
+                app:layout_constraintHorizontal_bias="0.93"
                 app:layout_constraintStart_toEndOf="@+id/garnforbrug"
                 app:layout_constraintTop_toBottomOf="@+id/materiallertext" />
 
@@ -238,12 +238,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="8dp"
                 android:text="Garn forbrug:"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.009"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materiallertext" />
+                app:layout_constraintTop_toTopOf="@+id/garnforbrugedit" />
 
             <TextView
                 android:id="@+id/pindenåle"
@@ -251,12 +251,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:text="Pinde/nåle:"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.009"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/garnforbrug" />
+                app:layout_constraintTop_toTopOf="@+id/editText" />
 
             <TextView
                 android:id="@+id/extrameterialler"
@@ -264,12 +264,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="4dp"
                 android:text="Extra:"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.009"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pindenåle" />
+                app:layout_constraintTop_toTopOf="@+id/editText4" />
 
             <EditText
                 android:id="@+id/editText"
