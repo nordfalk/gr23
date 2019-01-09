@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -24,6 +25,8 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
     private SearchFragment searchFragment;
     private PersonFragment personFragment;
     MenuItem tideligereMenuItem;
+
+    private DrawerLayout burgermenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

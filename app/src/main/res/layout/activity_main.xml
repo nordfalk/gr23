@@ -56,13 +56,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+
+
+</android.support.constraint.ConstraintLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/burgermenu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/burgeritems" />
-
-</android.support.constraint.ConstraintLayout>
-
+        android:fitsSystemWindows="true"
+        app:menu="@menu/burgeritems"
+        app:headerLayout="@layout/burgerheader"/>
 </android.support.v4.widget.DrawerLayout>
