@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/hej"
+        android:title="hejsa"
+        android:icon="@drawable/accept_icon"/>
+    <item android:title="Guide til hækling og strikning" />
+    <item android:title="Item" />
+    <item android:title="Item" />
+    <item android:title="Item" />
+    <item android:title="Inviter venner" />
+    <item android:title="Indstillinger" />
+    <item android:title="Log af" />
+</menu>

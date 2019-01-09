@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,6 +26,8 @@ public class Butik extends AppCompatActivity implements View.OnClickListener {
     private PersonFragment personFragment;
     MenuItem tideligereMenuItem;
 
+    private DrawerLayout burgermenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,8 @@ public class Butik extends AppCompatActivity implements View.OnClickListener {
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         mainNavigation =(BottomNavigationView) findViewById(R.id.store_navigation);
 
+        burgermenu = findViewById(R.id.drawer_layout);
+        burgermenu.closeDrawers();
 
         setupViewPager(viewPager);
 
