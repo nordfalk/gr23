@@ -59,17 +59,15 @@
 
 
 </android.support.constraint.ConstraintLayout>
-   <ScrollView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
+
     <android.support.design.widget.NavigationView
         android:id="@+id/burgermenu"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
+        android:fitsSystemWindows="false"
         app:headerLayout="@layout/burgerheader"
         app:menu="@menu/burgeritems"
         />
-   </ScrollView>
+
 </android.support.v4.widget.DrawerLayout>
