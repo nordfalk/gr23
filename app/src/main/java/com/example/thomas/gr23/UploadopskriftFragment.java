@@ -21,10 +21,10 @@ public class UploadopskriftFragment extends Fragment {
         return view;
     }
 
-    public void showOtherFragment()
-    {
-        Fragment fr=new NewDisplayingFragment();
-        FragmentChangeListener fc=(FragmentChangeListener)getActivity();
-        fc.replaceFragment(fr);
-    }
+//    public void showOtherFragment()
+//    {
+//        Fragment fr=new NewDisplayingFragment();
+//        FragmentChangeListener fc=(FragmentChangeListener)getActivity();
+//        fc.replaceFragment(fr);
+//    }
 }
