@@ -8,4 +8,6 @@
     <color name="colorSecondaryDark">#02B0B0</color>
 
     <color name="colorWhite">#ffffff</color>
+
+    <color name="grey">#999999</color>
 </resources>
