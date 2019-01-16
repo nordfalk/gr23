@@ -4,7 +4,7 @@
 <group android:checkableBehavior="single">
     <item
         android:id="@+id/hej"
-        android:title="Min profil" />
+        android:title="Hjem" />
     <item android:title="Guide til hækling og strikning" />
     <item android:title="Forum" />
     <item android:title="Notifikationer" />
