@@ -24,6 +24,8 @@ import android.widget.TextView;
 public class HomeFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     static int pos;
+    static String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
+            "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
 
     ListView gratis, betaling;
     public HomeFragment() {
@@ -39,8 +41,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
 
 
 
-        String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
-                "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
 
         ArrayAdapter gratisAdapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.overskrift, lande){
 
@@ -106,6 +106,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
             if (position == 7) {
 
 
+
             } //
             else {
 
@@ -128,7 +129,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
             View v = inflater.inflate(R.layout.fragment_detaljeret_opskrift, container, false);
 
             TextView overskrift = v.findViewById(R.id.overskrift);
-            overskrift.setText("Hej position "+pos);
+            overskrift.setText("Hej position "+pos + "land: "+lande[pos]);
             ImageButton luk = v.findViewById(R.id.luk);
             luk.setOnClickListener(new View.OnClickListener(){
 
