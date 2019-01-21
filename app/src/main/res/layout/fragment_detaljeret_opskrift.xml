@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Detaljeret_opskrift"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/overskrift"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:id="@+id/tekst"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:id="@+id/luk"
+        android:background="@drawable/search_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
