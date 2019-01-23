@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -24,8 +24,21 @@ import android.widget.TextView;
 public class HomeFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     static int pos;
-    static String[] lande = {"Danmark", "Norge", "Sverige", "Finland", "Holland", "Italien", "Tyskland",
-            "Frankrig", "Spanien", "Portugal", "Nepal", "Indien", "Kina", "Japan", "Thailand"};
+    static String[] opskrifter = {
+            // opskrifter [0]
+            "Tæppe med vifter ",
+            // opskrifter [1]
+            "Rumpepude Størrelse 40x40 cm\n"};
+
+    static String[] beskrivelser = {
+            // opskrifter [0]
+            "Tæppe med vifter ",
+            // opskrifter [1]
+            "Rumpepude Størrelse 40x40 cm\n"};
+
+    static int [] billeder = {R.drawable.person_icon, R.drawable.abe};
+
+
 
     ListView gratis, betaling;
     public HomeFragment() {
@@ -42,16 +55,21 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
 
 
 
-        ArrayAdapter gratisAdapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.overskrift, lande){
+        ArrayAdapter gratisAdapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.overskrift, opskrifter){
 
             @NonNull
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
+                TextView overskrift = v.findViewById(R.id.overskrift);
+                overskrift.setText(beskrivelser[position]);
                 TextView beskrivelse = v.findViewById(R.id.beskrivelse);
-                //settext
-                ImageView iv = v.findViewById(R.id.billede);
-                iv.setImageResource(R.drawable.abe);
+                beskrivelse.setText(beskrivelser[position]);
+
+                // samme med ImageView
+                ImageView billede = v.findViewById(R.id.billede);
+                billede.setImageResource(billeder[position]);
+
 
                 return v;
             }
@@ -61,13 +79,17 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
         gratis.setOnItemClickListener(this);
         gratis.setAdapter(gratisAdapter);
 
-        ArrayAdapter betalingAdapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.overskrift, lande){
+        ArrayAdapter betalingAdapter = new ArrayAdapter(getActivity(), R.layout.listeelement, R.id.overskrift, opskrifter){
 
             @NonNull
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
                 TextView beskrivelse = v.findViewById(R.id.beskrivelse);
+                beskrivelse.setText(beskrivelser[position]);
+                TextView overskrift = v.findViewById(R.id.overskrift);
+                overskrift.setText(beskrivelser[position]);
+                // samme med ImageView
                 //settext
                 ImageView iv = v.findViewById(R.id.billede);
                 iv.setImageResource(R.drawable.person_icon);
@@ -129,8 +151,12 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
             View v = inflater.inflate(R.layout.fragment_detaljeret_opskrift, container, false);
 
             TextView overskrift = v.findViewById(R.id.overskrift);
-            overskrift.setText("Hej position "+pos + "land: "+lande[pos]);
-            ImageButton luk = v.findViewById(R.id.luk);
+            overskrift.setText("Hej position "+pos + "land: "+ opskrifter[pos]);
+            overskrift.setText(opskrifter[pos]);
+            TextView teskt = v.findViewById(R.id.tekst);
+            teskt.setText(beskrivelser[pos]);
+
+            Button luk = v.findViewById(R.id.luk);
             luk.setOnClickListener(new View.OnClickListener(){
 
                 @Override
