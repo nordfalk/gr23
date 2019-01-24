@@ -20,6 +20,8 @@
         <activity android:name=".Store"></activity>
         <activity android:name=".uploadopskrift"></activity>
         <activity android:name=".Opskrift"></activity>
+        <activity android:name=".Guidehækling"></activity>
+        <activity android:name=".Guidestrikning"></activity>
     </application>
 
 </manifest>

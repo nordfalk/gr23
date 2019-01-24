@@ -2,6 +2,7 @@ package com.example.thomas.gr23;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -19,7 +20,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toolbar;
 
-public class Store extends AppCompatActivity implements View.OnClickListener {
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
+public class Store extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private BottomNavigationView mainNavigation;
     private ViewPager viewPager;
@@ -38,6 +43,12 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        if (!EMULATOR) {
+            Fabric.with(this, new Crashlytics());
+        }
+
+
 
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -47,6 +58,7 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         mainNavigation =(BottomNavigationView) findViewById(R.id.store_navigation);
+
 
 
         setupViewPager(viewPager);
@@ -112,6 +124,7 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
             }
         });
 
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
     private void setupViewPager(ViewPager viewPager) {
@@ -140,15 +153,27 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
             case android.R.id.home:
                 drawerlayout.openDrawer(GravityCompat.START);
                 return true;
-            case R.id.guidehækling:
-                Intent i = new Intent(this, Guidehækling.class);
-                startActivity(i);
-                return true;
-            case R.id.guidestrikning:
-                Intent ii = new Intent(this, Guidestrikning.class);
-                startActivity(ii);
-                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.guidehækling:
+                Intent i = new Intent(this, Guidehækling.class);
+                startActivity(i);
+                break;
+            case R.id.guidestrikning:
+                Intent ii = new Intent(this, Guidestrikning.class);
+                startActivity(ii);
+                break;
+        }
+        drawerlayout.closeDrawer(Gravity.START);
+        return true;
+    }
+
+
 }

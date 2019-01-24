@@ -2,6 +2,7 @@ package com.example.thomas.gr23;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
 
 public class uploadopskrift extends AppCompatActivity implements View.OnClickListener {
     Button tilfoejopskrift;
@@ -37,6 +42,12 @@ public class uploadopskrift extends AppCompatActivity implements View.OnClickLis
 
         tilfoejbilleder = findViewById(R.id.oploadbilled);
         tilfoejbilleder.setOnClickListener(this);
+
+        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        if (!EMULATOR) {
+            Fabric.with(this, new Crashlytics());
+        }
+
     }
 
 

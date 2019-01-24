@@ -3,6 +3,7 @@ package com.example.thomas.gr23;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -14,6 +15,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
 
 public class Opskrift extends AppCompatActivity implements View.OnClickListener {
     Button tilfoejknap, sletknap;
@@ -38,6 +43,12 @@ public class Opskrift extends AppCompatActivity implements View.OnClickListener 
         sletknap.setOnClickListener(this);
 
         parentlayout = findViewById(R.id.parentlayout);
+
+        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        if (!EMULATOR) {
+            Fabric.with(this, new Crashlytics());
+        }
+
     }
 
     @Override
