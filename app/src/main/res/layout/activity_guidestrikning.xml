@@ -37,7 +37,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="Hækling generelt"
+                    android:text="Strikning generelt"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -49,14 +49,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="12dp"
-                    android:text="Hvilken størrelse nål bør man vælge til hækling:"
+                    android:layout_marginTop="8dp"
+                    android:text="Hvilken størrelse pinde bør man vælge til strikning:"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+                    app:layout_constraintTop_toBottomOf="@+id/button2" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:layout_marginStart="16dp"
-                    android:text="Den nålestørrelse man skal anvende til at hækle er afhængig af tykkelsen på det garn man bruger. På garnets etiket findes der altid en anbefaling på hvilken nål man bbør anvende. De enkelte opskrifter kan anbefale en anden størrelse nål, hvilket man bør rette sig efter."
+                    android:text="Den pindestørrelse man skal anvende til at hækle er afhængig af tykkelsen på det garn man bruger. På garnets etiket findes der altid en anbefaling på hvilken nål man bbør anvende. De enkelte opskrifter kan anbefale en anden størrelse nål, hvilket man bør rette sig efter."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -218,6 +218,19 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Klik her for at gå til strikke teknikker"
+                    android:background="@color/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
             </android.support.constraint.ConstraintLayout>
 
