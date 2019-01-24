@@ -14,7 +14,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/store_navigation"
@@ -35,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/store_navigation"
+        android:layout_marginTop="52dp"
         android:layout_marginBottom="56dp"
         android:layout_alignParentTop="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" >

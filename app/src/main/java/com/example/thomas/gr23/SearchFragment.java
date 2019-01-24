@@ -31,8 +31,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_search, container, false);
 
-        crash = view.findViewById(R.id.crashbutton);
-        crash.setOnClickListener(this);
+
 
     return view;
     }

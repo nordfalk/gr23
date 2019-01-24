@@ -5,12 +5,29 @@
     <item
         android:id="@+id/hej"
         android:title="Hjem" />
-    <item android:title="Guide til hækling og strikning" />
-    <item android:title="Forum" />
-    <item android:title="Notifikationer" />
-    <item android:title="Inviter venner" />
-    <item android:title="Indstillinger" />
-    <item android:title="Hjælp" />
-    <item android:title="Log af" />
+    <item
+        android:id="@+id/guidehækling"
+        android:title="Guide til hækling" />
+    <item
+        android:id="@+id/guidestrikning"
+        android:title="Guide til strikning"/>
+    <item
+        android:id="@+id/forum"
+        android:title="Forum" />
+    <item
+        android:id="@+id/notifikationer"
+        android:title="Notifikationer" />
+    <item
+        android:id="@+id/inviter"
+        android:title="Inviter venner" />
+    <item
+        android:id="@+id/indstillinger"
+        android:title="Indstillinger" />
+    <item
+        android:id="@+id/hjaelp"
+        android:title="Hjælp" />
+    <item
+        android:id="@+id/logaf"
+        android:title="Log af" />
 </group>
 </menu>
