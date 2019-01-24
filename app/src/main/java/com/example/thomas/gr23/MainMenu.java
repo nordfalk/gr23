@@ -1,11 +1,16 @@
 package com.example.thomas.gr23;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     Button butik, forum;
@@ -23,6 +28,12 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
         butik.setOnClickListener(this);
         forum = (Button) findViewById(R.id.forum);
         forum.setOnClickListener(this);
+
+        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        if (!EMULATOR) {
+            Fabric.with(this, new Crashlytics());
+        }
+
     }
 
 

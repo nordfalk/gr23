@@ -1,19 +1,30 @@
 package com.example.thomas.gr23;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toolbar;
 
-public class Store extends AppCompatActivity implements View.OnClickListener {
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
+public class Store extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private BottomNavigationView mainNavigation;
     private ViewPager viewPager;
@@ -25,14 +36,29 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
     private PersonFragment personFragment;
     MenuItem tideligereMenuItem;
 
+    private DrawerLayout drawerlayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        if (!EMULATOR) {
+            Fabric.with(this, new Crashlytics());
+        }
+
+
+
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.menu_icon);
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         mainNavigation =(BottomNavigationView) findViewById(R.id.store_navigation);
+
 
 
         setupViewPager(viewPager);
@@ -85,6 +111,21 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(this);
 
+
+        drawerlayout = findViewById(R.id.drawer_layout);
+
+        NavigationView navigationView = findViewById(R.id.burgermenu);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                item.setChecked(true);
+                drawerlayout.closeDrawers();
+                return false;
+            }
+        });
+
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -104,4 +145,35 @@ public class Store extends AppCompatActivity implements View.OnClickListener {
             startActivity(i);
         }
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerlayout.openDrawer(GravityCompat.START);
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.guidehækling:
+                Intent i = new Intent(this, Guidehækling.class);
+                startActivity(i);
+                break;
+            case R.id.guidestrikning:
+                Intent ii = new Intent(this, Guidestrikning.class);
+                startActivity(ii);
+                break;
+        }
+        drawerlayout.closeDrawer(Gravity.START);
+        return true;
+    }
+
+
 }
