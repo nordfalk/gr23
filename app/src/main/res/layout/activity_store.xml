@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Store">
 
+
+
 </android.support.constraint.ConstraintLayout>
